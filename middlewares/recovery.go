@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/mangox-vip/package-core/response"
+	"github.com/Leonardo-Antonio/goservice-toolkit/response"
 )
 
 func RecoveryMiddleware(next http.Handler) http.Handler {
