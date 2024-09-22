@@ -1,7 +1,7 @@
 package logger
 
 import (
-	"os"
+	"io"
 
 	logOrigin "log"
 
@@ -10,13 +10,13 @@ import (
 
 var log *logrus.Logger
 
-func init() {
+func New(out io.Writer) {
 	log = logrus.New()
 	log.Formatter = &logrus.JSONFormatter{
 		PrettyPrint: true,
 		DataKey:     "data",
 	}
-	log.Out = os.Stdout
+	log.Out = out
 	logOrigin.Println("✅ Log configured")
 }
 
